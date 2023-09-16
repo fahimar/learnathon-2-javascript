@@ -1,2 +1,2 @@
 # learnathon-2-javascript
-I learning and growing with Javascript
+I am learning and growing with Javascript
