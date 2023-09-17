@@ -87,3 +87,14 @@ const calcAge3 = function (birthYear) {
 const calcAge4 = birthYear => 2037 - birthYear;
 const age3 = calcAge4(2000);
 console.log(age3);
+
+// Eval execution function
+let inp = "6+4";
+let res = Function("return " + inp);
+
+// function anonymus() {
+//     return 5 + 4
+// }
+
+let res1 = Function("return " + inp)();
+console.log(res1); 
