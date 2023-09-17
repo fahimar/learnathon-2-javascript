@@ -1,3 +1,15 @@
+/* **************** FOR loop ******************* */
+// String object
+let str = "Vivasoft";
+
+// for..of loop
+console.log("Elements of string str are :");
+for (let value of str) {
+    console.log(value);
+}
+
+
+
 let text = "";
 for (let i = 0; i < 5; i++) {
     text += "The number is " + i + "<br>";

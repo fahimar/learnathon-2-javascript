@@ -1,3 +1,38 @@
+function logger() {
+    console.log("My name is Fahim A R Akil");
+}
+// calling / running / invoking function
+logger();
+logger();
+logger();
+
+function fruitProcessor(apples, oranges) {
+    // console.log(apples, oranges);
+    const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+    return juice;
+}
+const appleJuice = fruitProcessor(3, 1);
+console.log(appleJuice);
+console.log(fruitProcessor(3, 1));
+
+// Function declaration
+function calcAge1(birthYear) {
+    // const age = 2037 - birthYear;
+    return 2037 - birthYear;
+}
+
+const age1 = calcAge1(2000);
+// console.log(age1);
+
+// Function expression
+const calcAge2 = function (birthYear) {
+    // const age = 2037 - birthYear;
+    return 2037 - birthYear;
+}
+const age2 = calcAge2(2000);
+
+console.log(age1, age2);
+
 // function funtionTwo(a, b) { // perameter
 //     console.log("Function kaj korceh");
 //     console.log(a, b);
@@ -42,3 +77,13 @@ update(x);
 
 console.log(x.year);
 
+const num = Number(80);
+/* ******************************* ARROW FUNCTION *********************************** */
+const calcAge3 = function (birthYear) {
+    // const age = 2037 - birthYear;
+    return 2037 - birthYear;
+}
+// ARROW FUNCTION
+const calcAge4 = birthYear => 2037 - birthYear;
+const age3 = calcAge4(2000);
+console.log(age3);
