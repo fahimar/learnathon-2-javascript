@@ -15,14 +15,17 @@ const appleJuice = fruitProcessor(3, 1);
 console.log(appleJuice);
 console.log(fruitProcessor(3, 1));
 
+
+
 // Function declaration
+const age1 = calcAge1(2000);
 function calcAge1(birthYear) {
     // const age = 2037 - birthYear;
     return 2037 - birthYear;
 }
 
-const age1 = calcAge1(2000);
-// console.log(age1);
+//const age1 = calcAge1(2000);
+console.log(age1);
 
 // Function expression
 const calcAge2 = function (birthYear) {
@@ -56,8 +59,28 @@ myFunc();
 
 //console.log(local);
 
+// Scope and closure
+let a = 20;
 
+const func = x => {
+    let a = x;
+};
 
+func(99);
+console.log(a);
+
+const counterCreate = () => {
+    let count = 0;
+    return () => {
+        console.log(count);
+        count++;
+    };
+};
+
+const counter = counterCreate();//counterCreator initializes a local variable (count) and then returns a function
+counter();
+counter();
+counter();
 
 //'use strict'; // uncommenting ctrl + /
 
@@ -87,3 +110,37 @@ const calcAge3 = function (birthYear) {
 const calcAge4 = birthYear => 2037 - birthYear;
 const age3 = calcAge4(2000);
 console.log(age3);
+
+const add = (x, y, z) => x + y + z;
+const val = add(2, 5, 7);
+console.log(val);
+
+const yearsUntilRetirement = birthYear => {
+    const age = 2023 - birthYear;
+    const retirement = 65 - age;
+    return retirement;
+}
+
+console.log(yearsUntilRetirement(2000));
+
+const yearsUntilRetirementstr = (birthYear, firstName) => {
+    const age = 2023 - birthYear;
+    const retirement = 65 - age;
+    //return retirement;
+    return `${firstName} retires in ${retirement} years`;
+}
+
+console.log(yearsUntilRetirementstr(2000, "Fahim"));
+console.log(yearsUntilRetirementstr(1971, "Dad"));
+
+
+// Eval execution function
+let inp = "6+4";
+let res = Function("return " + inp);
+
+// function anonymus() {
+//     return 5 + 4
+// }
+
+let res1 = Function("return " + inp)();
+console.log(res1); 
