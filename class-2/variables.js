@@ -3,7 +3,7 @@
 
 
 var name;
-name = "Fahim Al Rashid"; // In some cases this create some problem, it is kinf of reserved keyword
+name = "Fahim Al Rashid"; // In some cases this create some problem, it is kind of reserved keyword
 let $name = "Fahim Al Rashid";
 let firstName = "Fahim";// string
 let $function = 80;
