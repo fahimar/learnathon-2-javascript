@@ -59,8 +59,28 @@ myFunc();
 
 //console.log(local);
 
+// Scope and closure
+let a = 20;
 
+const func = x => {
+    let a = x;
+};
 
+func(99);
+console.log(a);
+
+const counterCreate = () => {
+    let count = 0;
+    return () => {
+        console.log(count);
+        count++;
+    };
+};
+
+const counter = counterCreate();//counterCreator initializes a local variable (count) and then returns a function
+counter();
+counter();
+counter();
 
 //'use strict'; // uncommenting ctrl + /
 
