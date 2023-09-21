@@ -35,3 +35,8 @@ Array.prototype.pMap = function (callbak) {  //This method tries to mimic the be
     }
     return res;
 }
+
+const numbers = [5, 6, 9];
+const doubled = numbers.pMap(num => num * 2);
+console.log(doubled); // [ 10, 12, 18 ]
+
