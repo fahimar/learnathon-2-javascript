@@ -1,3 +1,19 @@
+//Asynchronous Code
+// callback
+const myDiv = document.getElementById("myBtn");
+myDiv.addEventListener("click", function () {
+  document.getElementById("demo").innerHTML = "Hello World";
+});
+
+var num = 1;
+function addOne() {
+  num++;
+}
+addOne();
+addOne();
+addOne();
+console.log(num);
+
 // promise as asynchronous operation
 const myPromise = new Promise((resolve, reject) => {
   const num = Math.ceil(Math.random() * 100);
