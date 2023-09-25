@@ -1,4 +1,20 @@
 /* **************** FOR loop ******************* */
+// iteration of for loop 
+for (let rep = 0; rep < 10; rep++) {
+    console.log(`Lifting weights repetition ${rep} 🏋️‍♂️`);
+}
+// Looping Array , break, continue
+const akilArray = [
+    'Akil',
+    'Mahmud',
+    2023 - 2000,
+    'student',
+    ['Rock', 'Paper', 'Scissor']
+];
+for (let i = 0; i < 5; i++) {
+    console.log(akilArray[i], typeof akilArray[i]);
+}
+
 // String object
 let str = "Vivasoft";
 
