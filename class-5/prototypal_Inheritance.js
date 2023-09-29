@@ -1,17 +1,17 @@
-// function Dog(name, breed, color) {
-//   this.name = name;
-//   this.breed = breed;
-//   this.color = color;
-//   this.bark = function () {
-//     return "Woof!";
-//   };
-// }
+function DogFunc(name, breed, color) {
+  this.name = name;
+  this.breed = breed;
+  this.color = color;
+  this.bark = function () {
+    return "Woof!";
+  };
+}
 
-// const dog1 = new Dog("Daisy", "Labrador", "black");
-// const dog2 = new Dog("Jack", "Jack Russell", "white");
+const dog1 = new DogFunc("Daisy", "Labrador", "black");
+const dog2 = new DogFunc("Jack", "Jack Russell", "white");
 
 /// Using class Dog
-class Dog {
+class DogClass {
   constructor(name, breed, color) {
     this.name = name;
     this.breed = breed;
@@ -21,5 +21,5 @@ class Dog {
     return "Woof";
   }
 }
-const dog1 = new Dog("Daisy", "Labrador", "black");
-console.log(dog1);
+const dog3 = new DogClass("Daisy", "Labrador", "black");
+console.log(dog3);
