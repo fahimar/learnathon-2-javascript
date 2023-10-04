@@ -1,18 +1,16 @@
 //console.dir()
 // Values , Variables and Data Type
 
-
 var name;
 name = "Fahim Al Rashid"; // In some cases this create some problem, it is kind of reserved keyword
 let $name = "Fahim Al Rashid";
-let firstName = "Fahim";// string
+let firstName = "Fahim"; // string
 let $function = 80;
 const PI = 3.1415926535897932384626434;
 var x;
 var y;
 var z = x + y;
 var n = 50;
-
 
 console.log(firstName);
 console.log(z);
@@ -25,11 +23,10 @@ console.log(z);
 console.log("PI type is (" + typeof PI + ")");
 console.log(PI + " " + $function);
 
-
 function print() {
-    var square = n * n;
+  var square = n * n;
 
-    console.log(square);
+  console.log(square);
 }
 
 print();
@@ -67,6 +64,19 @@ age = "Young";
 console.log(age);
 console.log("age type is (" + typeof age + ")");
 console.log("Null type is (" + typeof null + ")"); //  bug
+
+const job = "student";
+const birthYear = 2000;
+const year = 2030;
+const akil =
+  "I'm " + firstName + ", a " + (year - birthYear) + " years old " + job + "!";
+console.log(akil);
+
+const akilNew = `I'm ${firstName}, a ${
+  year - birthYear
+} year old ${job} in 2030.`;
+console.log(akilNew);
+
 /* Output:
 Fahim
 NaN
@@ -84,4 +94,6 @@ student type is (undefined)
 Young
 age type is (string)
 Null type is (object)
+I'm Fahim, a 30 years old student!
+I'm Fahim, a 30 year old student in 2030.
 */
