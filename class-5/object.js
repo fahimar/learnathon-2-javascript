@@ -1,3 +1,27 @@
+// Function Object
+function Circle(radius) {
+  this.radius = radius;
+  this.draw = function () {
+    console.log("draw");
+  };
+}
+
+const Circle1 = new Function(
+  "radius",
+  `
+this.radius = radius;
+this.draw = function () {
+    console.log("draw");
+  }
+`
+);
+
+const circ = new Circle1(1);
+
+Circle.call({}, 1); // target of this
+Circle.apply({}, [1, 2, 3]);
+const another = new Circle(1);
+
 const circle = {
   radius: 1,
   location: {
