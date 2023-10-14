@@ -1,0 +1,8 @@
+.country {
+  background-color: #fff;
+  box-shadow: 0 2rem 5rem 1rem rgba(red, green, blue, 0.1);
+  font-size: 1.8rem;
+  width: 30rem;
+  border-radius: 0.7rem;
+  margin: 0 3rem;
+}
