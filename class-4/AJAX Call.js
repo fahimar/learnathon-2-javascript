@@ -5,7 +5,7 @@ const countriesContainer = document.querySelector(".countries");
 
 const getCountryData = function (country) {
   const request = new XMLHttpRequest();
-  request.open("GET", `https://restcountries.com/v3.1/name/bangladesh`);
+  request.open("GET", `https://restcountries.com/v3.1/name/${country}`);
   request.send();
 
   request.addEventListener("load", function () {
@@ -64,3 +64,5 @@ const getCountryData = function (country) {
 
 // Calling the function
 getCountryData("bangladesh");
+getCountryData("usa");
+getCountryData("germany");
