@@ -63,6 +63,16 @@ console.log(request);
 const getCountryData = function (country) {
   fetch(`https://restcountries.com/v3.1/name/${country}`)
     .then((response) => response.json())
-    .then((data) => renderCountry(data[0]));
+    .then((data) => {
+      renderCountry(data[0]);
+      const neighbour = data[0].borders?.[0];
+
+      if (!neighbour) return;
+      // Country 2
+      return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
+      //  return 23;
+    })
+    .then((response) => response.json())
+    .theb((data) => renderCountry(data, "neighbour"));
 };
 getCountryData("bangladesh");
