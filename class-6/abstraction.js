@@ -1,3 +1,4 @@
+//Abstraction  Reduce complexity + isolate impact of changes
 function Person() {
   this.name = "Fahim";
   if (this.constructor === Person) {

@@ -1,36 +1,52 @@
-// In an extended class, we can access the parent class constructor using the super keyword
-class DogClass {
-  constructor(name) {
+class Person {
+  constructor(name, age, year) {
     this.name = name;
+    this.age = age;
   }
-
-  bark() {
-    return "Woof!";
+  play() {
+    console.log(`${this.name} is playing.`);
   }
-}
-
-class Chihuahua extends DogClass {
-  constructor(name) {
-    super(name);
-  }
-  smallBark() {
-    return "Small woof!";
+  ageExp() {
+    let date = new Date();
+    return this.year - this.age;
   }
 }
 
-const myPet = new Chihuahua("Mimi");
-console.log(myPet);
+const person1 = new Person("Shanto", 28, 2018); // create actual Object
+const person2 = new Person("Afif", 24, 2020);
+const person3 = new Person("Mushfiqur", 36, 2001);
+
+person1.play();
+console.log(`His current experience is ${person1.age}`);
+person2.play();
+console.log(`His current experience is ${person2.age}`);
+person3.play();
+console.log(`His current experience is ${person3.age}`);
 
 class Car {
   constructor(brand) {
     this.brand = brand;
   }
 
-  startEngine() {
-    console.log(`Starting the engine of $(this.brand).`);
+  displayBrand() {
+    console.log(`This car is a ${this.brand}`);
   }
 }
 
-const car = new Car("Toyota");
-console.log(car);
-car.startEngine();
+const myCar = new Car("Toyota");
+myCar.displayBrand();
+// Inheritence
+class Model extends Car {
+  constructor(brand, mod) {
+    super(brand); // call the parent class constructor
+    this.model = mod;
+  }
+
+  displayModel() {
+    console.log(`This car model is ${this.model}.`);
+  }
+}
+
+const myModel = new Model("Toyota", "Camry");
+myModel.displayBrand();
+myModel.displayModel(); //This car model is Camry.
