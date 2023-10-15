@@ -22,9 +22,7 @@ const renderCountry = function (data, className = "") {
 
   const html = `
   <article class="country ${className}">
-    <img class="country__img" src="${
-      data.flags?.png ?? "path_to_a_default_image"
-    }" />
+    <img class="country__img" src="${data.flags?.png ?? "india.png"}" />
     <div class="country__data">
       <h3 class="country__name">${data.name?.common ?? "N/A"}</h3>
       <h4 class="country__region">${data.region ?? "N/A"}</h4>
@@ -37,7 +35,12 @@ const renderCountry = function (data, className = "") {
   </article>
   `;
   countriesContainer.insertAdjacentHTML("beforeend", html);
-  countriesContainer.style.opacity = 1;
+  // countriesContainer.style.opacity = 1;
+};
+
+const renderError = function (msg) {
+  countriesContainer.insertAdjacentElement("beforeend", msg);
+  // countriesContainer.style.opacity = 1;
 };
 
 const request = fetch("https://restcountries.com/v3.1/name/bangladesh");
@@ -61,18 +64,32 @@ console.log(request);
 // };
 
 const getCountryData = function (country) {
+  // country 1
   fetch(`https://restcountries.com/v3.1/name/${country}`)
     .then((response) => response.json())
     .then((data) => {
       renderCountry(data[0]);
       const neighbour = data[0].borders?.[0];
-
+      //  const neighbour = "BD"; // for Bangladesh as an example
       if (!neighbour) return;
       // Country 2
+
       return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
+
       //  return 23;
     })
     .then((response) => response.json())
-    .theb((data) => renderCountry(data, "neighbour"));
+    .then((data) => renderCountry(data, "neighbour"))
+    .catch((err) => {
+      console.log(`${err} ERROR`);
+      renderError(`Something went wrong ${err.message}. Try again!`);
+    })
+    .finally(() => {
+      countriesContainer.style.opacity = 1;
+    });
 };
-getCountryData("bangladesh");
+
+btn.addEventListener("click", function () {
+  getCountryData("bangladesh");
+});
+getCountryData("fgdfsgdfg");
