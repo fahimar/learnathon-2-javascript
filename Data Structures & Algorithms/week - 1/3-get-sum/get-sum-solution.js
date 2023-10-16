@@ -4,3 +4,4 @@ function getSum(a, b) {
 }
 
 module.exports = getSum;
+// npm test
