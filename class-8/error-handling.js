@@ -45,5 +45,40 @@ console.log("Welcome to Class-8");
 // const encodedURI = encodeURI("\uD800");
 // console.log(encodedURI);
 
-const decodeUri = decodeURI("%E0%A4%A");
-console.log(decodeUri);
+// const decodeUri = decodeURI("%E0%A4%A");
+// console.log(decodeUri);
+
+//! Internal Error
+// function infinityCall() {
+//   infinityCall();
+// }
+// // Uncaught RangeError: Maximum call stack size exceeded
+// //     at infinityCall (error-handling.js:53:3)
+// infinityCall();
+
+//! EvaluationError
+// eval('const name = "Fahim"; console.log(name);');
+// eval("console.log(age);");
+
+/**
+ * ? Try-Catch-Finally
+ */
+
+// try {
+//   //   if (true) {
+//   //     console.log("This is a syntax error");
+//   //   }
+//   const num = 180;
+//   num = 404;
+// } catch (error) {
+//   console.error("Error-", error);
+// }
+
+try {
+  const rasel = { age: 24 }; // object
+  console.log(rasel);
+} catch (error) {
+  console.log("error:::", error);
+} finally {
+  console.log("Will be console every time");
+}
