@@ -42,11 +42,11 @@ console.log("Welcome to Class-8");
 // console.log(today);
 
 //! URI Error
-// const encodedURI = encodeURI("\uD800");
-// console.log(encodedURI);
+const encodedURI = encodeURI("\uD800");
+console.log(encodedURI);
 
-// const decodeUri = decodeURI("%E0%A4%A");
-// console.log(decodeUri);
+const decodeUri = decodeURI("%E0%A4%A");
+console.log(decodeUri);
 
 //! Internal Error
 // function infinityCall() {
@@ -74,11 +74,29 @@ console.log("Welcome to Class-8");
 //   console.error("Error-", error);
 // }
 
+let loading = true;
+
 try {
   const rasel = { age: 24 }; // object
   console.log(rasel);
+
+  someAsyncCall();
+  loading = false;
 } catch (error) {
   console.log("error:::", error);
+  // loading = false;
 } finally {
   console.log("Will be console every time");
+  loading = false;
+}
+
+// if (true) console.log("True block");
+// else console.log("False block");
+function dosomething() {
+  console.log("True block");
+}
+try {
+  dosomething();
+} catch (error) {
+  console.log("False block");
 }
