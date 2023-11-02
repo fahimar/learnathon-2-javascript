@@ -1,20 +1,20 @@
 // Solution 1
-function findFirstNonRepeatingCharacter(str) {
-  const charCount = {};
+// function findFirstNonRepeatingCharacter(str) {
+//   const charCount = {};
 
-  for (const char of str) {
-    charCount[char] = (charCount[char] || 0) + 1;
-  }
-  for (const char of str) {
-    if (charCount[char] === 1) {
-      return char;
-    }
-  }
+//   for (const char of str) {
+//     charCount[char] = (charCount[char] || 0) + 1;
+//   }
+//   for (const char of str) {
+//     if (charCount[char] === 1) {
+//       return char;
+//     }
+//   }
 
-  // console.log(charCount);
+//   // console.log(charCount);
 
-  return null;
-}
+//   return null;
+// }
 // Solution 2
 function findFirstNonRepeatingCharacter(str) {
   const charCount = new Map();
